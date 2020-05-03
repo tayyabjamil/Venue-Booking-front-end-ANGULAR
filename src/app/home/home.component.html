@@ -1,0 +1,173 @@
+<div style="margin-bottom: 2%;">
+
+
+  <header class="eight xs-menu-style-solid fundpress-header-main-version color-navy-red xs-menu-style-border">
+
+    <nav class="xs-menus fundpress-menu clear-both">
+
+      <div class="nav-menus-wrapper " style="height: 0px;">
+        <div style="margin-left: 4%;" class="xs-logo-wraper">
+          <a style="height: 30px;" class="nav-brand xs-logo fundpress-logo-v1"
+            href="https://demo.xpeedstudio.com/wp/fundpress/">
+            <h2 style="color: green;" class="raleway f-900">VenueHub</h2>
+          </a>
+        </div>
+
+        <ul id="menu-main-menu" class="nav-menu">
+
+          <li><a routerLink="/home" style=" padding-top: 60px;"><strong>Home</strong></a></li>
+          <li><a routerLink="/Campaign"><strong>
+                Weddings</strong></a></li>
+          <li><a routerLink="/profile"><strong>About</strong></a></li>
+          <li><a routerLink="/registerHall"><strong>Register Your Hall</strong></a></li>
+
+        </ul>
+        <div>
+
+          <ul style="padding-top: 48px;" class="xs-icon-with-text fundpress-icon-menu">
+
+
+            <li><a routerLink="/signUp" class=" xs-btn round-btn " style="background-color: green;">SignUp</a>
+            </li>
+            <li><a routerLink="/login" class=" xs-btn round-btn " style="background-color: green;">Login</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+</div>
+<div style="margin-top: 12%;">
+
+  <div class="container mb-5 mt-5">
+    <div class="row">
+      <div class="col-6  " style="margin-top: 10%;">
+        <h1 class="col-9">
+          <pre class="fontitalic">Find The Best Venue </pre>
+        </h1>
+        <h5>
+          Eventify is the right place for you to book the halls with ease
+          while sitting at your homes.
+        </h5>
+        <button class="btn btn-success d-flex justify-content-center mt-5" type="submit">
+          Start Booking Now
+        </button>
+      </div>
+      <div class="col-6">
+        <img class="img-fluid w-100" src="../assets/images/bird.png" />
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="container ">
+      <div class="row">
+        <div class="col ">
+          <h2 class="d-flex justify-content-center">
+            <span><i id="eventify" class="fas fa-glass-cheers"></i></span>
+
+            Why
+            Eventify
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            Eventify is the platform which targets the booking and the viewing
+            of Event Halls with no hassle.One can easily view and book the halls
+            of their choice instead of going and visiting the halls one by and
+            and inquiring everything manually.Whereas Eventify makes this whole
+            lot of a work easy by giving each and every detail online.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row ">
+        <div class="col-4 p-2 ">
+          <i class="fas fa-map-marker-alt fa-3x d-flex justify-content-center"></i>
+          <h5 class="d-flex justify-content-center">Location</h5>
+          <p class="d-flex justify-content-center">
+            You can search your event halls simply by selecting your desired
+            location.
+          </p>
+        </div>
+        <div class="col-4  p-2">
+          <i class="fas fa-magic fa-3x d-flex justify-content-center"></i>
+          <h5 class="d-flex justify-content-center">Decor</h5>
+          <p class="d-flex justify-content-center">
+            Decor is one of the main concerns while arranging an event. We
+            assure you the best decor by providing you with all the formats as
+            well as an option for customized decor.
+          </p>
+        </div>
+        <div class="col-4  p-2">
+          <i class="fas fa-adjust fa-4x d-flex justify-content-center"></i>
+          <h5 class="d-flex justify-content-center">Customized Arrangements</h5>
+          <p class="d-flex justify-content-center">
+            You can get your hall booked and can customize each and everything
+            according your own choice.
+          </p>
+        </div>
+      </div>
+      <div>
+        <hr />
+
+      </div>
+    </div>
+    <div class="col-lg-11 container ">
+      <img style="height: 600px;width: 1200px;" src="../assets/images/e1.jpg" class="gradient responsive image">
+      <div class="hero-text" style="background-color: white;width: 450px;opacity: 4;">
+        <h1 style="font-size:xx-large;color: black;"><strong> Venue Location</strong></h1>
+        <h4 style="word-wrap: break-word;color: black;"><strong> Find your nearby Venues</strong></h4>
+        <div class="xs-btn-wrapre">
+          <mat-form-field>
+            <mat-label>Location</mat-label>
+            <mat-select (selectionChange)="onSelectionChange($event)">
+              <mat-option *ngFor="let location of ['faisal town','johar town','bahria','Ferozpur Road','Iqbal town']"
+               [value]="location">
+                {{location}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="middle" style="margin-top:5% ;">
+
+
+      </div>
+
+
+    </div>
+
+    <h2 style="text-align: center;">VENUES</h2>
+
+    <div>
+      <div style="margin: 5%;" class="containerflex">
+
+        <div *ngFor="let item of filterData" style="text-align: center;">
+          <img src="../assets/images/venue.jpg" style="height: 200px;width: 300px;">
+
+          <p style="font-weight: bold;">{{item.name}}</p>
+          <div style="margin: 2%;padding-right: 20px;">
+            <h5>{{item.location}}</h5>
+            <h5 style="float: left;padding-left: 40px;" class="fontitalic">Start Booking From/= </h5>
+            <h5 style="float: right;padding-right: 40px;">{{item.startBookingAmount}}</h5>
+          </div>
+          <div>
+            <ul>
+
+              <button (click)='moreInfo(item._id)' style="width: 40%;float:left;margin-top: 3%;" type="submit"
+                class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>More Info</button>
+              <button (click)='bookNow()' style="width: 40%;float:right" type="submit"
+                class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Book Now</button>
+
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

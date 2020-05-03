@@ -1,0 +1,114 @@
+<!-- <div style="margin-top: 10%;margin-left: 35%;margin-right: 40%;">
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" >
+    <a class="nav-link xs-white" (click)="toggleLogin(true)" style="background-color: #5b1e47;color: white; margin: 3%;" >
+      <h1> <strong>Login</strong></h1>
+    </a>
+  </li>
+  <li class="nav-item" >
+    <a class="nav-link xs-white"  (click)="toggleLogin(false)" style="background-color: #5b1e47;color: white;margin-left: 4%; margin: 3%;" >
+      <h1> <strong>SignUp</strong></h1>
+    </a>
+  </li>
+</ul>
+
+
+  <div *ngIf="!isLoggedIn" id="signup"  style="padding:40px 50px;">
+            <form  >
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                <ns-textField name="username" class="textfieldBorderColor  font13" [rformgroup]="rformSignup"
+                 rformControlName="username">
+                </ns-textField>
+
+
+              </div>
+              <div class="form-group">
+                <label><span class="glyphicon glyphicon-eye-open"></span>Email</label>
+                <ns-textField name="email" class="textfieldBorderColor  font13" [rformgroup]="rformSignup" rformControlName="email">
+                </ns-textField>
+
+              </div>
+              <div class="form-group">
+                <label><span class="glyphicon glyphicon-eye-open"></span>Password</label>
+                <ns-textField name="password" class="textfieldBorderColor  font13" [rformgroup]="rformSignup"
+                rformControlName="password">
+                </ns-textField>
+
+
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked>Remember me</label>
+              </div>
+               <button (click)='signUp()' type="submit" class="btn btn-success btn-block"><span
+                  class="glyphicon glyphicon-off"></span>Create Account </button>
+            </form>
+
+
+          </div>
+          <div id="login" *ngIf="
+          isLoggedIn" class="modal-body" style="padding:40px 50px;">
+             <form>
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                <ns-textField name="email" class="textfieldBorderColor  font13" [rformgroup]="rformLogin" rformControlName="email">
+                </ns-textField>
+
+
+              </div>
+              <div class="form-group">
+                <label><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                <ns-textField name="password" class="textfieldBorderColor  font13" [rformgroup]="rformLogin"
+                rformControlName="password">
+                </ns-textField>
+
+
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked>Remember me</label>
+              </div>
+              <button (click)='login()' type="submit" class="btn btn-success btn-block"><span
+                  class="glyphicon glyphicon-off"></span> Login </button>
+            </form>
+            <div >
+           <div >
+            <button  style="height: 40px;width: 235px;margin-top: 5%;" (click)="signInGoogle()" class="btn btn-danger">Sign in With Google</button>
+            <button  style="height: 40px;width: 235px;margin-top: 5%;" (click)="signInFacebook()" class="btn btn-primary">Sign in With facebook</button>
+          </div>
+          </div>
+          </div>
+
+</div> -->
+<div>
+<img
+      src="../assets/images/logo.jpeg"
+      alt="logo"
+      class="login-logo"
+    />
+    <hr />
+    <div id="login_div" class="main-div">
+      <h1 id="login_heading">Login</h1>
+
+      <form>
+        <div class="form-group">
+          <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+          <ns-textField name="email" class="textfieldBorderColor  font13" [rformgroup]="rformLogin" rformControlName="email">
+          </ns-textField>
+
+
+        </div>
+        <div class="form-group">
+          <label><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+          <ns-textField name="password" class="textfieldBorderColor  font13" [rformgroup]="rformLogin"
+          rformControlName="password">
+          </ns-textField>
+
+
+        </div>
+        <div class="checkbox">
+          <label style="color: black;"><input type="checkbox" value="" checked>Remember me</label>
+        </div>
+        <button (click)='login()' type="submit" class="btn btn-success btn-block"><span
+            class="glyphicon glyphicon-off"></span> Login </button>
+      </form>
+    </div>div>

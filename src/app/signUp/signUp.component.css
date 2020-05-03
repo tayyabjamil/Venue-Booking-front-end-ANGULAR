@@ -1,0 +1,197 @@
+body {
+  background: rgba(255, 255, 255, 0.301);
+  padding: 0px;
+  margin: 0px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+}
+
+hr {
+  width: 44%;
+  border-color: rgba(1, 33, 36, 0.952);
+  height: 0px;
+}
+
+input,
+button {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+
+.main-div,
+.loggedin-div {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 20px;
+  padding: 20px;
+}
+.signupmain {
+  width: 40%;
+  margin: 0px auto;
+  margin-top: 18px;
+  margin-left: 36%;
+  padding: 30px;
+  background-color: white;
+}
+
+.signupmain input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 55%;
+  margin-bottom: 2px;
+  transition: 2s ease-out;
+}
+
+.signupmain button {
+  background: #00423d;
+  color: #fff;
+  border: 1px solid #00423d;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  margin-top: 20px;
+  margin-left: 18%;
+  width: 25%;
+  transition: 1.2s ease-out;
+}
+.main-div button {
+  background: #00423d;
+  color: #fff;
+  border: 1px solid #00423d;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  margin-top: 20px;
+  margin-left: 18%;
+  width: 25%;
+  transition: 1.2s ease-out;
+}
+
+.signupmain button:hover {
+  background: #fff;
+  color: rgb(20, 87, 0);
+  border: 1px solid rgb(20, 87, 0);
+  cursor: pointer;
+}
+/* img
+{
+  margin-left: 32%;
+} */
+
+#login_heading {
+  color: #00423d;
+  margin-left: 32%;
+  margin-top: 4px;
+  padding-top: 1px;
+}
+
+#signup_heading {
+  color: #00423d;
+  margin-left: 45%;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 1.3s ease-out;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button,
+.loggedin-div button {
+  background: #00423d;
+  color: #fff;
+  border: 1px solid #00423d;
+  border-radius: 5px;
+  padding: 15px;
+
+  display: block;
+  width: 60%;
+  transition: 1.3s ease-out;
+}
+
+.main-div button:hover,
+.loggedin-div button:hover {
+  background: rgb(20, 87, 0);
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
+}
+
+.main-div #loginbutton:hover {
+  background: #777 !important;
+  border: #00423d !important;
+  cursor: pointer !important;
+}
+
+.container {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 800px;
+  height: 800px;
+  background-color: blueviolet;
+}
+
+.container-fluid {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 800px;
+  height: 800px;
+  background-color: red;
+}
+.left {
+  float: left;
+  width: 400px;
+  height: 500px;
+  background-color: beige;
+}
+.right {
+  float: right;
+  width: 400px;
+  height: 500px;
+  background-color: green;
+}
+.images {
+  padding-left: 1px;
+  width: 400px;
+  height: 600px;
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  margin-left: 32%;
+  width: 40%;
+  height: 28%;
+}
+
+.img-fluid {
+  width: 50%;
+  height: 40%;
+}
+.eventify {
+  /* font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+  font-family: "Source Code Pro", monospace;
+}
+
+.login-logo {
+  margin-left: 32%;
+  width: 40%;
+  height: 34%;
+}

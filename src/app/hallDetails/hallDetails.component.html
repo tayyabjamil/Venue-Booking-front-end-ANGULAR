@@ -1,0 +1,131 @@
+<div>
+<div style="height: 200px">
+
+  <div class="col-lg-12 container ">
+    <img style="height: 200px;width: 100%;" src="../assets/images/e1.jpg" class="gradient responsive image">
+    <div class="hero-text" style="background-color: white;width: 450px;">
+      <h1 style="font-size:xx-large;color: black;"><strong> Venue Details</strong></h1>
+
+    </div>
+
+
+  </div>
+  </div>
+  <div style="margin:5% ;height:900px;">
+    <div>
+
+    <div  style="height: 700px;width: 70%;float: left;">
+
+      <h2>{{doc.location}}</h2>
+    <h5>{{doc.contact}}</h5>
+    <h5>{{doc.email}}</h5>
+  <br>
+  <hr >
+  <h2 >About Venue</h2>
+  <div style="padding-left:70px ;" class="wf-product-preview clearfix row">
+
+
+    <video style="height: 400px;width: 700px;" controls>
+      <source src="../assets/Sample320.mp4" type="video/mp4">
+    </video>
+
+
+  </div>
+
+  <div style="background-color: white;">
+  {{doc.about}}
+  {{doc.about}}{{doc.about}}
+  </div>
+  </div>
+</div>
+    <div style="width:30%;height: 700px;float: right;border: 1px;border-width: 1px;border-style: groove;">
+      <div style="margin: 10%;">
+        <h3 style="text-align: center;color:black ;">Your Requirnments?</h3>
+
+        <form [formGroup]="rform">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <h4 >Your Name</h4>
+              <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform"
+               rformControlName="name">
+              </ns-textField>
+              <h4  >Your Email</h4>
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="email">
+              </ns-textField>
+              <h4  >Phone</h4>
+
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="phone">
+              </ns-textField>
+              <h4  >Guests</h4>
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="guests">
+              </ns-textField>
+
+              <h4  >Date</h4>
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="date">
+              </ns-textField>
+              <h4  >Event Type</h4>
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="eventType">
+              </ns-textField>
+
+              <h4  >City</h4>
+              <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="city">
+              </ns-textField>
+
+            </div>
+          </div>
+
+          <button type="submit" (click)='sendRequest()' class="btn"
+           style="background-color: green;color: white; margin-top: 3%;margin-left: 20%;width: 50%;">Register Hall</button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <div style="margin:5%">
+    <h2>Venue Available Services</h2>
+    <h5>To make a reservation, check the availability or other inquiries, please contact us now! Not only that, to ensure your event starts and goes as smoothly as possible, we also provide advance venue set- up service. All the basic equipment such as tables,
+      chairs, projector & screen, PA system will be set-up before your arrival, and it’s free.</h5>
+      <div>
+        <div style="margin: 3%;">
+        <ul *ngFor="let item of services"  >
+
+          <li><a  class=" xs-btn  " style="background-color: green;color:white ;">{{item}}</a>
+          </li>
+
+        </ul>
+      </div>
+
+  </div>
+  </div>
+  <div style="margin:5%">
+    <h2>Venue Gallary</h2>
+    <div  class="containerflex">
+    <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+      <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+    </div>
+    <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+    <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+  </div><div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+  <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+  </div>
+  <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+    <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+  </div>
+  <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+  <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+  </div><div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+  <img   src="../assets/images/e4.jpg" style="height: 200px;width: 300px;" >
+  </div>
+  <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+    <img   src="../assets/images/e1.jpg" style="height: 200px;width: 300px;" >
+  </div>
+  <div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+  <img   src="../assets/images/e1.jpg" style="height: 200px;width: 300px;" >
+  </div><div class="fundpress-item-header " style="margin:2%;height: 250px;width: 300px;">
+  <img   src="../assets/images/e1.jpg" style="height: 200px;width: 300px;" >
+  </div>
+   </div>
+</div>

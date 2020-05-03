@@ -1,0 +1,77 @@
+<div style="margin-left: 30%;margin-right: 30%;">
+  <img
+      src="../assets/images/logo.jpeg"
+      alt="logo"
+      class="login-logo"
+    />
+  <h1 style="margin-left: 20%;">REGISTER HALL</h1>
+  <hr />
+  <form [formGroup]="rform">
+    <div class="panel panel-default">
+      <div class="panel-body" style="margin-left:20%;">
+
+        <h3 >Name</h3>
+        <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="name">
+        </ns-textField>
+        <h3  >Adress</h3>
+        <mat-form-field [formGroup]="rform">
+          <mat-label>Location</mat-label>
+          <mat-select  formControlName="location">
+            <mat-option  *ngFor="let location of ['faisal town','johar town','bahria','Ferozpur Road','Iqbal town']"
+             [value]="location">
+              {{location}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="location">
+        </ns-textField> -->
+        <h3  >Venue main Image</h3>
+
+        <div class="form-group">
+
+          <input style="width: 50%;" type="file" name="imagePath" (change)="selectCampaignImage($event)"
+            class="form-control" />
+
+          <button   type="submit" (click)='uploadimgFile()' style="margin-top: 5%;color: white;" class="btn btn-primary">upload Campaign
+            Image </button>
+
+        </div>
+        <br>
+
+         <br>
+        <h3  > Starting Amount</h3>
+        <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="startBookingAmount">
+        </ns-textField>
+
+        <h3  >About Venue</h3>
+        <ns-textField [hint]="about" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="about">
+        </ns-textField>
+
+        <h3  >Services</h3>
+        <!-- <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="services"> -->
+         <mat-form-field  [formGroup]="rform">
+          <mat-label>Select Services</mat-label>
+          <mat-select formControlName="services" multiple>
+            <mat-option    *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- </ns-textField> -->
+        <h3  >Email</h3>
+        <ns-textField  class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="email">
+        </ns-textField>
+        <h3  >Contact</h3>
+        <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="contact">
+        </ns-textField>
+
+      </div>
+      <button type="submit" (click)='registerHall()' class="btn"
+      style="background-color: green;color: white; margin-top: 3%;margin-left: 20%;">Register Hall</button>
+
+    </div>
+
+
+  </form>
+</div>

@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.f-900 {
+  font-weight: 900;
+}
+.fontitalic{
+font-family: 'Courgette', cursive;
+}

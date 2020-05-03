@@ -1,0 +1,43 @@
+<div >
+<img
+      src="../assets/images/logo.jpeg"
+      alt="logo"
+      class="logo"
+    />
+
+    <hr />
+    <div>
+      <h1 id="signup_heading">Signup</h1>
+      <div id="signup_div" class="signupmain">
+        <form  >
+          <div class="form-group">
+            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+            <ns-textField name="username" class="textfieldBorderColor  font13" [rformgroup]="rformSignup"
+             rformControlName="username">
+            </ns-textField>
+
+
+          </div>
+          <div class="form-group">
+            <label><span class="glyphicon glyphicon-eye-open"></span>Email</label>
+            <ns-textField name="email" class="textfieldBorderColor  font13" [rformgroup]="rformSignup" rformControlName="email">
+            </ns-textField>
+
+          </div>
+          <div class="form-group">
+            <label><span class="glyphicon glyphicon-eye-open"></span>Password</label>
+            <ns-textField name="password" class="textfieldBorderColor  font13" [rformgroup]="rformSignup"
+            rformControlName="password">
+            </ns-textField>
+
+
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="" checked>Remember me</label>
+          </div>
+           <button (click)='signUp()' style="width: 35%" type="submit" class="btn btn-success btn-block"><span
+              class="glyphicon glyphicon-off"></span>Create Account </button>
+        </form>
+
+      </div>
+    </div></div>
