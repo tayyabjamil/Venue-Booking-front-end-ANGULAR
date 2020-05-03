@@ -20,6 +20,8 @@ eventType;
 services;
 city;
 doc;
+date;
+requests
   constructor(
     private formBuilder: FormBuilder,
     private httpService: HttpService,
@@ -27,23 +29,32 @@ doc;
     private router: Router,
     public route: ActivatedRoute
   ) { }
-sendRequest(){
 
-}
   ngOnInit() {
     const id = (this.route.snapshot.paramMap.get('id'));
     this.hallId = id;
     this.rform = this.formBuilder.group({
-      hallId: new FormControl(this.hallId, [Validators.required]),
+      registerHallId: new FormControl(this.hallId, [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-      city: new FormControl('', [Validators.required]),
-      amount: new FormControl('', [Validators.required, ]),
+      email: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+
       phone: new FormControl('', [Validators.required]),
-      eventType: new FormControl('', ),
-      guests: new FormControl('', ),
+      guests: new FormControl('', [Validators.required, ]),
+      eventType: new FormControl('', [Validators.required]),
+      date: new FormControl('', ),
+      city: new FormControl('', ),
 
     });
     this.HallDetails();
+
+  }
+
+  sendRequest(){
+
+    this.httpService.createRequest(this.rform).subscribe(() => {
+      alert('request Sent ');
+    });
+
   }
   HallDetails() {
     this.httpService.getHallDetails(this.hallId).subscribe(details => {

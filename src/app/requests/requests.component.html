@@ -1,0 +1,45 @@
+<div style="margin:5%">
+myVenus
+<div>
+  <div style="margin: 5%;" class="containerflex">
+
+    <!-- <div *ngFor="let item of filterData" style="text-align: center;">
+      <img src="../assets/images/venue.jpg" style="height: 200px;width: 300px;">
+
+      <p style="font-weight: large;" class="fontitalic">{{item.name}}</p>
+      <div style="margin: 2%;padding-right: 20px;">
+        <p>{{item.location}}</p>
+        <p style="float: left;padding-left: 40px;" >Start Booking From/= </p>
+        <p style="float: right;padding-right: 40px;">{{item.startBookingAmount}}</p>
+      </div>
+      <div>
+        <ul>
+
+          <button (click)='moreInfo(item._id)' style="width: 40%;float:left;margin-top: 3%;" type="submit"
+            class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>More Info</button>
+          <button (click)='bookNow()' style="width: 40%;float:right" type="submit"
+            class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Book Now</button>
+
+        </ul>
+      </div>
+
+    </div> -->
+  </div>
+</div>
+</div>
+<div style="width:30%" *ngFor="let item of requests">
+  <div >
+   <h3 style="float: left;">New Reuest from</h3>
+   <h3 style="padding-right:40px ;float: right;">{{item.name}}</h3>
+ </div>
+ <div >
+   <div style="float:left;">
+   <button
+   class="btn btn-success btn-block">Accept Request</button>
+ </div>
+ <div style="float:right"
+ >
+   <button      class="btn btn-success btn-block">Reject Request</button>
+ </div>
+</div>
+ </div>

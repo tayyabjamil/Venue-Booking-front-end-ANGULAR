@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { MyAuthService } from './myAuth.service';
+import { MyAuthService } from './myAuth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+authService: any;
 
 constructor(
   private http: HttpClient,
+  private myauthService: MyAuthService
    ) { }
 httpHeaders = {
   headers: new HttpHeaders({
@@ -37,6 +39,10 @@ createAccount(newUser) {
     this.httpHeaders
   );
 }
+getUserData() {
+  return this.http.get('http://localhost:3001/registerHall/' + this.myauthService.getID(), this.httpHeaders);
+
+}
 registerHall(hallData) {
   return this.http.post(
     'http://localhost:3001/registerHall/',       {
@@ -53,6 +59,24 @@ registerHall(hallData) {
     },
     this.httpHeaders
   );
+}
+createRequest(requestData) {
+  return this.http.post(
+    'http://localhost:3001/booking',
+    {
+        name: requestData.value.name,
+        email: requestData.value.email,
+        guests: requestData.value.guests,
+        eventType: requestData.value.eventType,
+        phone: requestData.value.phone,
+        registerHallId: requestData.value.registerHallId,
+        city: requestData.value.city
+    },
+    this.httpHeaders
+  );
+}
+getRequests(id) {
+  return this.http.get('http://localhost:3001/booking/' + id,   this.httpHeaders);
 }
 getAllVenues() {
   return this.http.get('http://localhost:3001/registerHall/', this.httpHeaders);

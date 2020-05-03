@@ -15,6 +15,23 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllprojects();
+
+     // tslint:disable-next-line: comment-format
+    //@ts-ignore
+    var ps = new ParticleSlider({
+      ptlGap: 2,
+      mouseForce: 100,
+      // monochrome: true,
+      // color: '#000',
+      ptlSize: 3,
+      // sliderId: 'particle-slider',
+
+    });
+
+    var ptl = new ps.Particle(ps);
+
+    // Set time to live of Particle to20 frames.
+    ptl.ttl = 5;
   }
 
   getAllprojects() {

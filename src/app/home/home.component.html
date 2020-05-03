@@ -16,8 +16,9 @@
         <ul id="menu-main-menu" class="nav-menu">
 
           <li><a routerLink="/home" style=" padding-top: 60px;"><strong>Home</strong></a></li>
-          <li><a routerLink="/Campaign"><strong>
-                Weddings</strong></a></li>
+          <li><a routerLink="/request"><strong>
+
+          Requests</strong></a></li>
           <li><a routerLink="/profile"><strong>About</strong></a></li>
           <li><a routerLink="/registerHall"><strong>Register Your Hall</strong></a></li>
 
@@ -55,8 +56,15 @@
         </button>
       </div>
       <div class="col-6">
-        <img class="img-fluid w-100" src="../assets/images/bird.png" />
-      </div>
+       <img class="img-fluid w-100" src="../assets/images/bird.png" />
+        <!-- <div id="particle-slider">
+          <div class="slides">
+            <div class="slide" data-src="../assets/images/bird.png">
+            </div>
+          </div>
+          <canvas class="draw" width="800" height="400"></canvas>
+        </div>
+      </div> -->
     </div>
   </div>
   <div>
@@ -149,11 +157,11 @@
         <div *ngFor="let item of filterData" style="text-align: center;">
           <img src="../assets/images/venue.jpg" style="height: 200px;width: 300px;">
 
-          <p style="font-weight: bold;">{{item.name}}</p>
+          <p style="font-weight: large;" class="fontitalic">{{item.name}}</p>
           <div style="margin: 2%;padding-right: 20px;">
-            <h5>{{item.location}}</h5>
-            <h5 style="float: left;padding-left: 40px;" class="fontitalic">Start Booking From/= </h5>
-            <h5 style="float: right;padding-right: 40px;">{{item.startBookingAmount}}</h5>
+            <p>{{item.location}}</p>
+            <p style="float: left;padding-left: 40px;" >Start Booking From/= </p>
+            <p style="float: right;padding-right: 40px;">{{item.startBookingAmount}}</p>
           </div>
           <div>
             <ul>

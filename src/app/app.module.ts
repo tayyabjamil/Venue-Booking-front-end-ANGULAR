@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
    declarations: [
@@ -25,7 +26,8 @@ import {MatSelectModule} from '@angular/material/select';
       LoginComponent,
       RegisterHallComponent,
       TextFieldComponent,
-      SignUpComponent
+      SignUpComponent,
+      RequestsComponent
    ],
    imports: [
       BrowserModule,

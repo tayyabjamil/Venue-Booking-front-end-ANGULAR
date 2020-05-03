@@ -11,12 +11,16 @@
 
   </div>
   </div>
+  <div>
+    <h2  style="width: 30%;text-align: center;">New Requests </h2>
+
+  </div>
   <div style="margin:5% ;height:900px;">
     <div>
 
     <div  style="height: 700px;width: 70%;float: left;">
 
-      <h2>{{doc.location}}</h2>
+      <p style="font-size: xx-large;" class="fontitalic">{{doc.location}}</p>
     <h5>{{doc.contact}}</h5>
     <h5>{{doc.email}}</h5>
   <br>
@@ -47,8 +51,7 @@
             <div class="panel-body">
 
               <h4 >Your Name</h4>
-              <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform"
-               rformControlName="name">
+              <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="name">
               </ns-textField>
               <h4  >Your Email</h4>
               <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="email">
