@@ -1,33 +1,69 @@
-<div style="margin:5%">
-myVenus
 <div>
-  <div style="margin: 5%;" class="containerflex">
+  <h2 style="margin:5%;text-align: center; font-size: xx-large;" class="fontitalic">My Venues</h2>
 
-    <!-- <div *ngFor="let item of filterData" style="text-align: center;">
+  <div class="row" style="margin: 5%;">
+
+
+
+    <div *ngFor="let item of userData" class="col-sm-4">
       <img src="../assets/images/venue.jpg" style="height: 200px;width: 300px;">
+      <div class="row">
 
-      <p style="font-weight: large;" class="fontitalic">{{item.name}}</p>
-      <div style="margin: 2%;padding-right: 20px;">
-        <p>{{item.location}}</p>
-        <p style="float: left;padding-left: 40px;" >Start Booking From/= </p>
-        <p style="float: right;padding-right: 40px;">{{item.startBookingAmount}}</p>
+        <div class="col-lg-4">
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Name</h3>
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Location</h3>
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Booking</h3>
+
+        </div>
+        <div class="col-lg-3">
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.name}}</h3>
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.location}}</h3>
+          <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.startBookingAmount}}
+          </h3>
+
+        </div>
+        <div class="col-lg-3">
+          <h3 style="padding-right: 40px;float: left;">Edit</h3>
+          <h3 style="padding-right: 40px;float: left;">Edit</h3>
+          <h3 style="padding-right: 40px;float: left;">Edit</h3>
+        </div>
+        <button style="margin: 3%;height: 40px;" (click)='getRequests(item._id)'>Get Requests</button><br>
+
       </div>
-      <div>
-        <ul>
+    </div>
 
-          <button (click)='moreInfo(item._id)' style="width: 40%;float:left;margin-top: 3%;" type="submit"
-            class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>More Info</button>
-          <button (click)='bookNow()' style="width: 40%;float:right" type="submit"
-            class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Book Now</button>
+    <div  class="col-sm-7">
+      <div style="margin: 5%;text-align: center;font-size: xx-large;font-weight: bold;" class="fontitalic">New Requests</div>
+      <div *ngFor="let item of requests">
+        <div class="row">
+          <div class="col-sm-3">
+            <h3 style="font-weight: bold;">{{item.name}}</h3>
+          </div>
+            <div class="col-sm-3">
+              <h3 >send you request</h3>
+            </div>
+              <div class="col-sm-4">
 
-        </ul>
+
+                <label style="float: left;" class="btn btn-primary">Accept</label>
+                 <label style="float: left;" class="btn btn-danger"> Reject</label>
+              </div>
+
+
+            </div>
+          </div>
+
+
+        </div>
       </div>
 
-    </div> -->
-  </div>
-</div>
-</div>
-<div style="width:30%" *ngFor="let item of requests">
+
+
+    </div>
+
+
+
+  <!-- <div style="width:30%" *ngFor="let item of requests">
   <div >
    <h3 style="float: left;">New Reuest from</h3>
    <h3 style="padding-right:40px ;float: right;">{{item.name}}</h3>
@@ -42,4 +78,4 @@ myVenus
    <button      class="btn btn-success btn-block">Reject Request</button>
  </div>
 </div>
- </div>
+ </div> -->

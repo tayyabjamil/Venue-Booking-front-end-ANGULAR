@@ -22,12 +22,12 @@ export class RequestsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = (this.route.snapshot.paramMap.get('id'));
-    this.hallId = id;
-    this.getRequests();
+
+
     this.getuserData();
   }
-  getRequests(){
+  getRequests(hallId){
+    this.hallId = hallId;
     this.httpService.getRequests(this.hallId).subscribe(requests => {
       this.requests = requests;
 

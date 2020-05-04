@@ -30,8 +30,8 @@ export class RegisterHallComponent implements OnInit {
     this.userId = this.userId;
     this.rform = this.formBuilder.group({
       userId: new FormControl(this.userId, [Validators.required]),
-      name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-      email: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required,Validators.email]),
 
       location: new FormControl(this.location, [Validators.required]),
       startBookingAmount: new FormControl('', [Validators.required, ]),
