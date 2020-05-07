@@ -22,7 +22,7 @@ export class RequestsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+this.getRequests(this.hallId);
 
     this.getuserData();
   }

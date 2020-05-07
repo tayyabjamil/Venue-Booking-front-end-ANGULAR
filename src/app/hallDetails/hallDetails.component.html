@@ -11,14 +11,10 @@
 
   </div>
   </div>
-  <div>
-    <h2  style="width: 30%;text-align: center;">New Requests </h2>
-
-  </div>
-  <div style="margin:5% ;height:900px;">
+  <div style="margin:5% ;height:600px;">
     <div>
 
-    <div  style="height: 700px;width: 70%;float: left;">
+    <div  style="height: 600px;width: 70%;float: left;">
 
       <p style="font-size: xx-large;" class="fontitalic">{{doc.location}}</p>
     <h5>{{doc.contact}}</h5>
@@ -27,18 +23,14 @@
   <hr >
   <h2 >About Venue</h2>
   <div style="padding-left:70px ;" class="wf-product-preview clearfix row">
-
-
-    <video style="height: 400px;width: 700px;" controls>
-      <source src="../assets/Sample320.mp4" type="video/mp4">
-    </video>
-
+    <div style="width: 500px;margin-top: 5%;margin-left: 5%;margin-right: 5%;word-wrap: break-word;">
+      {{doc?.about}}
+    </div>
 
   </div>
 
   <div style="background-color: white;">
-  {{doc.about}}
-  {{doc.about}}{{doc.about}}
+
   </div>
   </div>
 </div>

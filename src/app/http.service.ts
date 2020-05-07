@@ -56,6 +56,7 @@ registerHall(hallData) {
       contact: hallData.value.contact,
       services: hallData.value.services,
       mainImage: hallData.value.mainImage,
+      vedio: hallData.value.vedio,
     },
     this.httpHeaders
   );

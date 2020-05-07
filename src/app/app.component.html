@@ -1,5 +1,44 @@
 <div>
 
+  <header class="eight xs-menu-style-solid fundpress-header-main-version color-navy-red xs-menu-style-border">
+
+    <nav class="xs-menus fundpress-menu clear-both">
+
+      <div class="nav-menus-wrapper " style="height: 120px;">
+        <div style="margin-left: 4%;" class="xs-logo-wraper">
+        <p style="padding-top: 50px;font-size: 300%;" class="fontitalic">Eventify</p>
+        </div>
+
+        <ul id="menu-main-menu" class="nav-menu">
+
+          <li><a routerLink="/home" style=" padding-top: 60px;"><strong>Home</strong></a></li>
+          <li><a routerLink="/request"><strong>
+
+          Requests</strong></a></li>
+          <li><a routerLink="/profile"><strong>About</strong></a></li>
+          <li><a routerLink="/registerHall"><strong>Register Your Hall</strong></a></li>
+
+        </ul>
+        <div>
+
+          <ul style="padding-top: 48px;" class="xs-icon-with-text fundpress-icon-menu">
+
+
+            <li><a routerLink="/signUp" class=" xs-btn round-btn " style="background-color: green;">SignUp</a>
+            </li>
+            <li><a routerLink="/login" *ngIf="! authService.loggedIn()" class=" xs-btn round-btn "
+               style="background-color: green;">Login</a>
+            </li>
+            <li><a routerLink="/login" *ngIf=" authService.loggedIn()"  (click)=" onLogoutClick()" class=" xs-btn round-btn "
+              style="background-color: green;">Logout</a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
 
   <div>
     <router-outlet></router-outlet>

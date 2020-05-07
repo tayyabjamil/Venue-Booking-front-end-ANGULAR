@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 export class MyAuthService {
 
 constructor() { }
-// loggedIn() {
-//   return !!localStorage.getItem('token');
-// }
+loggedIn() {
+  return !!localStorage.getItem('userId');
+}
 
 getID() {
   return JSON.parse(localStorage.getItem('userId'));
@@ -18,7 +18,7 @@ getID() {
 
 // }
 loggedOut() {
-  return localStorage.removeItem('token');
+  return localStorage.removeItem('userId');
 
 }
 }

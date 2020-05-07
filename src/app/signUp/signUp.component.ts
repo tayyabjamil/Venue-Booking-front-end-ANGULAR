@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   rformSignup: FormGroup;
+  islogedin:false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,6 +33,7 @@ export class SignUpComponent implements OnInit {
     if (this.rformSignup.valid) {
       this.httpService.createAccount(this.rformSignup.value) .subscribe((res: any) => {
         alert('account created');
+        this.router.navigate(['/login']);
       });
 
   } else {

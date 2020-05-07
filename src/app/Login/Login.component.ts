@@ -52,7 +52,7 @@ user;
         // this.setToken(res.token);
         this.setId(res.userId);
 
-
+        this.isLoggedIn = true;
         alert('login succesfully');
       });
     } else {

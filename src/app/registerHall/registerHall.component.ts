@@ -9,6 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./registerHall.component.css']
 })
 export class RegisterHallComponent implements OnInit {
+  constructor(
+    private formBuilder: FormBuilder,
+    private httpService: HttpService,
+    private auth: MyAuthService,
+    private router: Router
+  ) { }
   rform: FormGroup;
   images;
   name;
@@ -18,12 +24,8 @@ export class RegisterHallComponent implements OnInit {
   mainImage;
   userId;
   location;
-  constructor(
-    private formBuilder: FormBuilder,
-    private httpService: HttpService,
-    private auth: MyAuthService,
-    private router: Router
-  ) { }
+  toppings = new FormControl();
+  toppingList: string[] = ['Siting 100', 'Siting 300', 'Siting 100','Wifi', 'Parking', 'Decoration', 'DJ', 'PhotoGrapher'];
 
   ngOnInit() {
     this.userId = this.auth.getID();
@@ -38,27 +40,19 @@ export class RegisterHallComponent implements OnInit {
       contact: new FormControl('', [Validators.required]),
       services: new FormControl('', [Validators.required]),
       about: new FormControl('', [Validators.required, Validators.minLength(30)]),
-      mainImage: new FormControl(this.images, ),
+      mainImage: new FormControl('', [Validators.required] ),
     });
   }
-  toppings = new FormControl();
-  toppingList: string[] = ['Siting 100', 'Siting 300', 'Siting 100','Wifi', 'Parking', 'Decoration', 'DJ', 'PhotoGrapher'];
-  selectCampaignImage(event) {
+  selectVenueImage(event) {
     if (event.target.files.length > 0) {
     const file = event.target.files[0];
+
     this.images = file;
+    this.rform.controls['mainImage'].setValue(this.images.name);
     }
 
 }
-uploadimgFile() {
-  const formData = new FormData();
-  formData.append('mainImage', this.images);
-  // this.httpService.campaignImage(formData).subscribe( formData => {
-  //   console.log(formData);
-  //   alert('img uploaded');
-  // }
-    // );
-}
+
 registerHall(){
   const rform = new FormData();
   rform.append('mainImage', this.images);
