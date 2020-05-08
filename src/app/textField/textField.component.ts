@@ -12,7 +12,7 @@ export class TextFieldComponent implements OnInit {
   @Input() rformControlName;
   @Input() rtext;
 
-
+  @Input() type;
   @Input() class;
   @Input() hint;
 
@@ -20,7 +20,9 @@ export class TextFieldComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.type);
+  }
 
   get invalidControl() {
     if (

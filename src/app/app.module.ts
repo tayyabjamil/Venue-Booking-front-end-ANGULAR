@@ -17,7 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { RequestsComponent } from './requests/requests.component';
-
+import { RegisterCarComponent } from './registerCar/registerCar.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CarDetailsComponent } from './carDetails/carDetails.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -27,7 +29,9 @@ import { RequestsComponent } from './requests/requests.component';
       RegisterHallComponent,
       TextFieldComponent,
       SignUpComponent,
-      RequestsComponent
+      RequestsComponent,
+      RegisterCarComponent,
+      CarDetailsComponent
    ],
    imports: [
       BrowserModule,
@@ -38,7 +42,8 @@ import { RequestsComponent } from './requests/requests.component';
       HttpClientModule,
       BrowserAnimationsModule,
       MatIconModule,
-      MatSelectModule
+      MatSelectModule,
+      MatDatepickerModule
    ],
    providers: [
       MyAuthService

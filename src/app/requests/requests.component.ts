@@ -13,6 +13,9 @@ export class RequestsComponent implements OnInit {
   hallId: string;
   requests: Object;
  userData;
+ userDataCar;
+ carId;
+  requestsCar: Object;
   constructor(
     private formBuilder: FormBuilder,
     private httpService: HttpService,
@@ -22,14 +25,23 @@ export class RequestsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-this.getRequests(this.hallId);
+
 
     this.getuserData();
+    this.getRequests(this.hallId);
+    this.getuserCars();
   }
   getRequests(hallId){
     this.hallId = hallId;
     this.httpService.getRequests(this.hallId).subscribe(requests => {
       this.requests = requests;
+
+   });
+  }
+  getRequestsCar(carId){
+    this.carId = carId;
+    this.httpService.getRequestsCar(this.carId).subscribe(requests => {
+      this.requestsCar = requests;
 
    });
   }
@@ -39,5 +51,15 @@ this.getRequests(this.hallId);
       // this.title = this.campaignData.startCampaigns[0].title;
       // this.id = this.campaignData._id;
     });
+  }
+  getuserCars() {
+    this.httpService.getUserCars().subscribe((userData) => {
+      this.userDataCar = userData;
+      // this.title = this.campaignData.startCampaigns[0].title;
+      // this.id = this.campaignData._id;
+    });
+  }
+  accept(){
+    alert('request accepted');
   }
 }

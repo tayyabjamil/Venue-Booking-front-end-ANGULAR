@@ -1,0 +1,69 @@
+<div style="margin-left: 30%;margin-right: 30%;">
+  <img
+      src="../assets/images/logo.jpeg"
+      alt="logo"
+      class="login-logo"
+    />
+  <h1 style="margin-left: 20%;">REGISTER Car</h1>
+  <hr />
+  <form [formGroup]="rform">
+    <div class="panel panel-default">
+      <div class="panel-body" style="margin-left:20%;">
+
+        <h3 >Name</h3>
+        <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="name">
+        </ns-textField>
+        <h3  >Adress</h3>
+        <mat-form-field [formGroup]="rform">
+          <mat-label>Location</mat-label>
+          <mat-select  formControlName="location">
+            <mat-option  *ngFor="let location of ['faisal town','johar town','bahria','Ferozpur Road','Iqbal town']"
+             [value]="location">
+              {{location}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <h3  >Car main Image</h3>
+
+        <div class="form-group">
+
+          <input style="width: 50%;" type="file" name="imagePath" (change)="selectCarImage($event)"
+            class="form-control" />
+
+
+        </div>
+        <h3  >Car Images</h3>
+
+        <div class="form-group">
+          <div>
+            <input type="file" name="images" multiple (change)="selectMultipleImage($event)" />
+          </div>
+
+        </div>
+        <br>
+
+         <br>
+        <h3  > Rent Amount</h3>
+        <ns-textField type="number" class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="amount">
+        </ns-textField>
+
+        <h3  >About Car</h3>
+        <ns-textField [hint]="about" style="height: 300px;" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="about">
+        </ns-textField>
+
+        <h3  >Contact</h3>
+        <ns-textField type="number" class="textfieldBorderColor  font13" [rformgroup]="rform"
+         rformControlName="contact">
+        </ns-textField>
+
+      </div>
+      <button type="submit" (click)='registerCar()' class="btn"
+      style="background-color: green;color: white; margin-top: 3%;margin-left: 20%;">Register Car</button>
+
+    </div>
+
+
+  </form>
+</div>

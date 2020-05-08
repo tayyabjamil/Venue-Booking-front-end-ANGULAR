@@ -43,6 +43,15 @@ getUserData() {
   return this.http.get('http://localhost:3001/registerHall/' + this.myauthService.getID(), this.httpHeaders);
 
 }
+getUserCars() {
+  return this.http.get('http://localhost:3001/registerCar/' + this.myauthService.getID(), this.httpHeaders);
+
+}
+
+getuserVehicles(){
+  return this.http.get('http://localhost:3001/registerCar/' + this.myauthService.getID(), this.httpHeaders);
+
+}
 registerHall(hallData) {
   return this.http.post(
     'http://localhost:3001/registerHall/',       {
@@ -56,7 +65,41 @@ registerHall(hallData) {
       contact: hallData.value.contact,
       services: hallData.value.services,
       mainImage: hallData.value.mainImage,
+      multipleImages: hallData.value.multipleImages,
       vedio: hallData.value.vedio,
+    },
+    this.httpHeaders
+  );
+}
+registerCar(CarData) {
+  return this.http.post(
+    'http://localhost:3001/registerCar/',       {
+
+      userAccountId: CarData.value.userId,
+      name: CarData.value.name,
+      location: CarData.value.location,
+      amount: CarData.value.amount,
+      about: CarData.value.about,
+      contact: CarData.value.contact,
+      date:CarData.value.date,
+      multipleImages: CarData.value.multipleImages,
+      mainImage: CarData.value.mainImage,
+    },
+    this.httpHeaders
+  );
+}
+createRequestCar(requestData) {
+  return this.http.post(
+    'http://localhost:3001/bookingCar',
+    {
+        name: requestData.value.name,
+        email: requestData.value.email,
+
+
+        phone: requestData.value.phone,
+        registerCarId: requestData.value.registerCarId,
+        city: requestData.value.city,
+        date: requestData.value.date
     },
     this.httpHeaders
   );
@@ -71,7 +114,8 @@ createRequest(requestData) {
         eventType: requestData.value.eventType,
         phone: requestData.value.phone,
         registerHallId: requestData.value.registerHallId,
-        city: requestData.value.city
+        city: requestData.value.city,
+        date:requestData.value.date
     },
     this.httpHeaders
   );
@@ -79,10 +123,20 @@ createRequest(requestData) {
 getRequests(id) {
   return this.http.get('http://localhost:3001/booking/' + id,   this.httpHeaders);
 }
+getRequestsCar(id) {
+  return this.http.get('http://localhost:3001/bookingCar/' + id,   this.httpHeaders);
+}
 getAllVenues() {
   return this.http.get('http://localhost:3001/registerHall/', this.httpHeaders);
 }
+getAllCars() {
+  return this.http.get('http://localhost:3001/registerCar/', this.httpHeaders);
+}
 getHallDetails(id) {
   return this.http.get('http://localhost:3001/registerHall/hallDetails/' + id,   this.httpHeaders);
+}
+
+getCarDetails(id) {
+  return this.http.get('http://localhost:3001/registerCar/carDetails/' + id,   this.httpHeaders);
 }
 }

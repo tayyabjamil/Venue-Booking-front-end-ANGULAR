@@ -1,0 +1,90 @@
+<div>
+  <div style="height: 200px">
+
+    <div class="col-lg-12 container ">
+      <div class="hero-text" style="background-color: white;width: 450px;">
+        <h1 style="font-size:xx-large;color: black;"><strong>Car  Details</strong></h1>
+
+      </div>
+
+
+    </div>
+    </div>
+    <div style="margin:5% ;height:200px;">
+      <div>
+
+      <div  style="height: 200px;width: 70%;float: left;">
+     <h2>Adress:</h2>
+        <p style="font-size: xx-large;" class="fontitalic">{{details.location}}</p>
+      <h2>Contact</h2>
+        <h5>{{details.contact}}</h5>
+      <h2>Email</h2>
+        <h5>{{details.email}}</h5>
+
+        <br>
+
+
+    <hr >
+
+    </div>
+
+
+    </div>
+  </div>
+  <div style="height: 600px;">
+    <div style="float:left">
+      <h2>About</h2>
+      {{details.about}}
+     </div>
+      <div style="width:30%;height: 700px;float: right;border: 1px;border-width: 1px;border-style: groove;">
+
+        <div style="margin: 5%;">
+          <h3 style="text-align: center;color:black ;">Your Requirnments?</h3>
+
+          <form [formGroup]="rform">
+            <div class="panel panel-default">
+              <div class="panel-body">
+
+                <h4 >Your Name</h4>
+                <ns-textField name="name" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="name">
+                </ns-textField>
+                <h4  >Your Email</h4>
+                <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="email">
+                </ns-textField>
+                <h4  >Phone</h4>
+
+                <ns-textField type="number" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="phone">
+                </ns-textField>
+
+                <h4  >Date</h4>
+
+                <ns-textField type="date" class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="date">
+                </ns-textField>
+
+                <h4  >City</h4>
+                <ns-textField class="textfieldBorderColor  font13" [rformgroup]="rform" rformControlName="city">
+                </ns-textField>
+
+              </div>
+            </div>
+
+            <button type="submit" (click)='sendRequestCar()' class="btn"
+             style="background-color: green;color: white; margin-top: 3%;margin-left: 20%;width: 50%;">Send Request</button>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="margin: 5%;" >
+      <h2> Gallary</h2>
+      <div  class="containerflex">
+
+          <div *ngFor="let item of multipleImages"  style="margin:2%">
+            <img  [src]='"../assets/images/"+ item' style="margin: 4%;height: 200px;width: 300px;">
+     </div>
+  </div>
+
+  </div>

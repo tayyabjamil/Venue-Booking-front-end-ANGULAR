@@ -10,30 +10,23 @@ import { HttpService } from "../http.service";
 export class HomeComponent implements OnInit {
   allData = [];
   filterData = [];
-
+  carData: any;
+  allDataCar = [];
   constructor(public router: Router, public httpService: HttpService) {}
 
   ngOnInit() {
     this.getAllprojects();
 
-     // tslint:disable-next-line: comment-format
-    //@ts-ignore
-    var ps = new ParticleSlider({
-      ptlGap: 2,
-      mouseForce: 100,
-      // monochrome: true,
-      // color: '#000',
-      ptlSize: 3,
-      // sliderId: 'particle-slider',
 
+    this.getAllcars();
+   }
+   getAllcars() {
+    this.httpService.getAllCars().subscribe((dataVenues: any) => {
+      this.carData = dataVenues;
+
+      // this.title=this.allData[0].title
     });
-
-    var ptl = new ps.Particle(ps);
-
-    // Set time to live of Particle to20 frames.
-    ptl.ttl = 5;
   }
-
   getAllprojects() {
     this.httpService.getAllVenues().subscribe((dataVenues: any) => {
       this.allData = dataVenues;
@@ -44,10 +37,14 @@ export class HomeComponent implements OnInit {
   moreInfo(allData: any) {
     this.router.navigate(["hallDetails/", allData]);
   }
+  moreInfoCar(allDataCar){
+    this.router.navigate(["carDetails/", allDataCar]);
+
+  }
   bookNow() {
     this.router.navigate(["bookNow"]);
-  }
 
+  }
   filterVenue(location) {
     this.filterData = [];
     this.allData.forEach((venue) => {

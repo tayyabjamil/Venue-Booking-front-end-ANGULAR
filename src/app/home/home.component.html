@@ -115,9 +115,9 @@
     <h2 style="text-align: center;">VENUES</h2>
 
     <div>
-      <div style="margin: 5%;" class="containerflex">
+      <div style="margin: 2%;" class="containerflex">
 
-        <div *ngFor="let item of filterData" style="text-align: center;">
+        <div  *ngFor="let item of filterData" style="text-align: center;">
           <img  [src]='"../assets/images/"+ item.mainImage' style="margin: 4%;height: 200px;width: 300px;">
 
           <p style="font-weight: large;" class="fontitalic">{{item.name}}</p>
@@ -129,7 +129,35 @@
           <div>
             <ul>
 
-              <button (click)='moreInfo(item._id)' style="width: 40%;float:left;margin-top: 3%;" type="submit"
+              <button (click)='moreInfo(item._id)' style="width: 40%;float:left;" type="submit"
+                class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>More Info</button>
+              <button (click)='bookNow()' style="width: 40%;float:right" type="submit"
+                class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Book Now</button>
+
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <h2 style="text-align: center;">VEHICLES</h2>
+
+    <div>
+      <div style="margin: 5%;" class="containerflex">
+
+        <div *ngFor="let item of carData" style="text-align: center;">
+          <img  [src]='"../assets/images/"+ item.mainImage' style="margin: 4%;height: 200px;width: 300px;">
+
+          <p style="font-weight: large;" class="fontitalic">{{item.name}}</p>
+          <div style="margin: 2%;padding-right: 20px;">
+            <p>{{item.location}}</p>
+            <p style="float: left;padding-left: 40px;" >Start Rent /= </p>
+            <p style="float: right;padding-right: 40px;">{{item.amount}}</p>
+          </div>
+          <div>
+            <ul>
+
+              <button (click)='moreInfoCar(item._id)' style="width: 40%;float:left;" type="submit"
                 class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>More Info</button>
               <button (click)='bookNow()' style="width: 40%;float:right" type="submit"
                 class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Book Now</button>
@@ -141,4 +169,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

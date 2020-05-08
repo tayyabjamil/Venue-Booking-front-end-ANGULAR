@@ -1,12 +1,12 @@
 <div>
-  <h2 style="margin:5%;text-align: center; font-size: xx-large;" class="fontitalic">My Venues</h2>
+  <h2 style="margin-top:10%;text-align: center; font-size: xx-large;" class="fontitalic">My VENUES</h2>
 
   <div class="row" style="margin: 5%;">
 
 
 
     <div *ngFor="let item of userData" class="col-sm-4">
-      <img src="../assets/images/venue.jpg" style="height: 200px;width: 300px;">
+      <img [src]='"../assets/images/"+ item.mainImage' style="height: 200px;width: 300px;">
       <div class="row">
 
         <div class="col-lg-4">
@@ -37,7 +37,17 @@
       <div *ngFor="let item of requests">
         <div class="row">
           <div class="col-sm-3">
+            <h2>name</h2>
             <h3 style="font-weight: bold;">{{item.name}}</h3>
+            <h2>phone</h2>
+            <h3 style="font-weight: bold;">{{item.phone}}</h3>
+            <h2>Event Type</h2>
+            <h3 style="font-weight: bold;">{{item.eventType}}</h3>
+            <h2>City</h2>
+            <h3 style="font-weight: bold;">{{item.city}}</h3>
+            <h2>Date</h2>
+            <h3 style="font-weight: bold;">{{item.date}}</h3>
+
           </div>
             <div class="col-sm-3">
               <h3 >send you request</h3>
@@ -45,7 +55,7 @@
               <div class="col-sm-4">
 
 
-                <label style="float: left;" class="btn btn-primary">Accept</label>
+                <label style="float: left;" (click)="accept()"  class="btn btn-primary">Accept</label>
                  <label style="float: left;" class="btn btn-danger"> Reject</label>
               </div>
 
@@ -57,6 +67,72 @@
         </div>
       </div>
 
+      <h2 style="margin-top:10%;text-align: center; font-size: xx-large;" class="fontitalic">My Cars</h2>
+
+      <div class="row" style="margin: 5%;">
+
+
+
+        <div *ngFor="let item of userDataCar" class="col-sm-4">
+          <img [src]='"../assets/images/"+ item.mainImage' style="height: 200px;width: 300px;">
+          <div class="row">
+
+            <div class="col-lg-4">
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Name</h3>
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Location</h3>
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">Booking</h3>
+
+            </div>
+            <div class="col-lg-3">
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.name}}</h3>
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.location}}</h3>
+              <h3 style="padding-right: 40px;float: left;font-weight: large" class="fontitalic">{{item.startBookingAmount}}
+              </h3>
+
+            </div>
+            <div class="col-lg-3">
+              <h3 style="padding-right: 40px;float: left;">Edit</h3>
+              <h3 style="padding-right: 40px;float: left;">Edit</h3>
+              <h3 style="padding-right: 40px;float: left;">Edit</h3>
+            </div>
+            <button style="margin: 3%;height: 40px;" (click)='getRequestsCar(item._id)'>Get Requests</button><br>
+
+          </div>
+        </div>
+
+        <div  class="col-sm-7">
+          <div style="margin: 5%;text-align: center;font-size: xx-large;font-weight: bold;" class="fontitalic">New Requests</div>
+          <div *ngFor="let item of requestsCar">
+            <div class="row">
+              <div class="col-sm-3">
+                <h2>name</h2>
+                <h3 style="font-weight: bold;">{{item.name}}</h3>
+                <h2>phone</h2>
+                <h3 style="font-weight: bold;">{{item.phone}}</h3>
+
+                <h2>City</h2>
+                <h3 style="font-weight: bold;">{{item.city}}</h3>
+                <h2>Date</h2>
+                <h3 style="font-weight: bold;">{{item.date}}</h3>
+
+              </div>
+                <div class="col-sm-3">
+                  <h3 >send you request</h3>
+                </div>
+                  <div class="col-sm-4">
+
+
+                    <label style="float: left;" (click)="accept()"  class="btn btn-primary">Accept</label>
+                     <label style="float: left;" class="btn btn-danger"> Reject</label>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
 
 
     </div>

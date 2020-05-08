@@ -7,6 +7,8 @@ import { HallDetailsComponent } from './hallDetails/hallDetails.component';
 import { SignUpComponent } from './signUp/signUp.component';
 import { RequestsComponent } from './requests/requests.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterCarComponent } from './registerCar/registerCar.component';
+import { CarDetailsComponent } from './carDetails/carDetails.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signUp', component: SignUpComponent },
   { path: 'request', component: RequestsComponent },
+  { path: 'registerCar', component: RegisterCarComponent},
   { path: 'hallDetails/:id', component: HallDetailsComponent },
+  { path: 'carDetails/:id', component: CarDetailsComponent },
 ];
 
 @NgModule({
